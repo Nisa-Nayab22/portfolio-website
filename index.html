@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nisa | Data Science Student</title>
+
+<style>
+:root{
+    --bg:#0f172a;
+    --card:#1e293b;
+    --primary:#4f46e5;
+    --accent:#06b6d4;
+    --text:#f8fafc;
+}
+
+/* Reset */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Segoe UI',sans-serif;
+    background:var(--bg);
+    color:var(--text);
+    scroll-behavior:smooth;
+    overflow-x:hidden;
+}
+
+/* Floating Background Blobs */
+body::before,
+body::after{
+    content:"";
+    position:fixed;
+    width:500px;
+    height:500px;
+    border-radius:50%;
+    filter:blur(120px);
+    z-index:-1;
+}
+
+body::before{
+    background:var(--primary);
+    top:-150px;
+    left:-150px;
+    opacity:0.4;
+}
+
+body::after{
+    background:var(--accent);
+    bottom:-150px;
+    right:-150px;
+    opacity:0.3;
+}
+
+/* Navbar */
+nav{
+    position:fixed;
+    width:100%;
+    padding:18px 50px;
+    backdrop-filter:blur(12px);
+    background:rgba(15,23,42,0.7);
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    z-index:1000;
+}
+
+.logo{
+    font-size:22px;
+    font-weight:bold;
+    color:var(--accent);
+}
+
+.nav-links{
+    display:flex;
+    gap:30px;
+    list-style:none;
+}
+
+.nav-links a{
+    text-decoration:none;
+    color:var(--text);
+    transition:0.3s;
+}
+
+.nav-links a:hover{
+    color:var(--accent);
+}
+
+/* Hero */
+.hero{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:120px 20px;
+}
+
+.hero h1{
+    font-size:60px;
+    background:linear-gradient(90deg,var(--primary),var(--accent));
+    -webkit-background-clip:text;
+    color:transparent;
+}
+
+.hero p{
+    margin-top:15px;
+    font-size:22px;
+    opacity:0.85;
+}
+
+.btn{
+    margin-top:30px;
+    padding:15px 35px;
+    border-radius:40px;
+    background:linear-gradient(90deg,var(--primary),var(--accent));
+    border:none;
+    color:white;
+    font-weight:bold;
+    text-decoration:none;
+    display:inline-block;
+    transition:0.3s;
+}
+
+.btn:hover{
+    transform:scale(1.05);
+    box-shadow:0 0 20px var(--accent);
+}
+
+/* Social */
+.social{
+    margin-top:25px;
+}
+
+.social a{
+    font-size:18px;
+    color:var(--accent);
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    text-decoration:none;
+    transition:0.3s;
+}
+
+.social a:hover{
+    color:white;
+    transform:scale(1.05);
+}
+
+/* Sections */
+section{
+    padding:100px 20px;
+}
+
+.container{
+    max-width:1100px;
+    margin:auto;
+}
+
+h2{
+    text-align:center;
+    margin-bottom:50px;
+    font-size:36px;
+}
+
+/* Cards */
+.card{
+    background:var(--card);
+    padding:25px;
+    border-radius:20px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.4);
+    transition:0.4s;
+}
+
+.card:hover{
+    transform:translateY(-10px);
+    box-shadow:0 15px 40px rgba(79,70,229,0.4);
+}
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:30px;
+}
+
+/* Scroll Animation */
+.fade{
+    opacity:0;
+    transform:translateY(40px);
+    transition:0.8s ease;
+}
+
+.fade.show{
+    opacity:1;
+    transform:translateY(0);
+}
+
+/* Contact Form */
+.contact-input{
+    width:100%;
+    padding:14px;
+    margin-top:12px;
+    border-radius:12px;
+    border:none;
+    outline:none;
+    background:#0f172a;
+    color:white;
+}
+
+.contact-btn{
+    margin-top:20px;
+    width:100%;
+    padding:14px;
+    border-radius:40px;
+    border:none;
+    font-weight:bold;
+    background:linear-gradient(90deg,var(--primary),var(--accent));
+    color:white;
+    cursor:pointer;
+}
+
+/* Responsive */
+@media(max-width:768px){
+.hero h1{font-size:40px;}
+.nav-links{display:none;}
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+<div class="logo">Nisa</div>
+<ul class="nav-links">
+<li><a href="#about">About</a></li>
+<li><a href="#skills">Skills</a></li>
+<li><a href="#projects">Projects</a></li>
+<li><a href="#career">Career</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+</nav>
+
+<!-- Hero Section -->
+<section class="hero">
+<div>
+
+<h1><span id="typing-hero"></span></h1>
+
+<p>Data Science Student</p>
+
+<a class="btn" href="#about">Explore Profile</a>
+
+<div class="social">
+<a href="https://www.linkedin.com/in/nisa-nayab-a79639397/" target="_blank">
+🔗 View LinkedIn
+</a>
+</div>
+
+</div>
+</section>
+
+<!-- About -->
+<section id="about">
+<div class="container">
+<h2>About Me</h2>
+
+<div class="grid">
+<div class="card fade">
+<p>
+I am a Data Science student with a strong interest in exploring how data can be used to solve real-world problems
+ and support intelligent decision making. Currently, I am in the fourth semester of my BSc Data Science degree at
+  City University, Pakistan.
+ </p>
+ <br>
+  <p>
+My academic focus includes programming, machine learning fundamentals, data analysis, and predictive modeling. I enjoy working with datasets, understanding patterns, and applying statistical and computational methods to extract meaningful insights.
+</p>
+</div>
+
+<div class="card fade">
+<h3> Degree</h3>
+<p>BSc Data Science</p>
+
+<h3 style="margin-top:15px;"> University</h3>
+<p>City University, Pakistan</p>
+
+<h3 style="margin-top:15px;">Semester</h3>
+<p>4th Semester</p>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Skills -->
+<section id="skills">
+<div class="container">
+<h2>Technical Skills</h2>
+
+<div class="grid">
+<div class="card fade">
+<h3>Programming</h3>
+<p> Python (Data Analysis, Basic Machine Learning)</p>
+
+<p>C++ (Algorithmic / Fundamental Programming)</p>
+
+<p>SQL (Basic Database Queries)</p>
+
+<p>HTML & CSS (Basic Web Interface Design)</p>
+</div>
+
+<div class="card fade">
+<h3>Data Science & ML</h3>
+<p>
+Data Cleaning and Preprocessing</p>
+<p>
+Exploratory Data Analysis (EDA)</p>
+<p>
+Machine Learning Model Training</p>
+<p>
+Predictive Modeling</p>
+<p>
+Feature Selection and Analysis</p>
+<p>
+Working with Pandas and NumPy</p>
+<p>
+</div>
+
+<div class="card fade">
+<h3>Core Strengths</h3>
+<p>
+Logical Thinking, Problem Solving, Statistical Analysis, 
+Algorithmic Understanding and Data Interpretation
+</p>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Projects -->
+<section id="projects">
+<div class="container">
+<h2>Projects</h2>
+
+<div class="grid">
+<div class="card fade">
+<h3> AI Interview Chatbot</h3>
+<p>
+Created an intelligent chatbot that simulates interview sessions by asking questions and evaluating responses based on logical processing. The project focuses 
+on applying basic natural language interaction and automated response evaluation.
+</p>
+</div>
+
+<div class="card fade">
+<h3> Electricity Trend Prediction</h3>
+<p>
+Developed a machine learning model to analyze historical electricity usage data and predict future consumption trends. The project was aimed at understanding pattern recognition in 
+energy demand and supporting basic predictive analysis using data science techniques.
+</p>
+</div>
+
+<div class="card fade">
+<h3> Smart Calculator</h3>
+<p>
+Created a smart calculator application using structured programming and conditional logic. The project was developed
+ to strengthen algorithmic thinking, problem-solving, and programming fundamentals.
+</p>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Career -->
+<section id="career">
+<div class="container">
+<h2>Career Vision</h2>
+
+<div class="grid">
+<div class="card fade">
+<h3>Short-Term Goals</h3>
+<p>
+In the short term, my goal is to improve my programming and machine learning skills by working on practical projects and learning industry-relevant tools. I also aim to gain internship experience 
+in the field of data science and analytics to develop real-world problem-solving abilities.
+</p>
+</div>
+
+<div class="card fade">
+<h3>Long-Term Goals</h3>
+<p>
+n the long term, I aspire to become a professional data scientist or data analyst and work in a technology-oriented organization. I want to contribute to building intelligent and data-driven 
+solutions while continuously improving my technical and analytical expertise.
+</p>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Contact -->
+<section id="contact">
+<div class="container">
+<h2>Contact Me</h2>
+
+<div class="card fade" style="max-width:600px;margin:auto;">
+<p style="opacity:0.85;">
+Feel free to connect for collaboration, internship opportunities, or professional discussion.
+</p>
+
+<input class="contact-input" placeholder="Your Name">
+<input class="contact-input" placeholder="Your Email">
+<textarea class="contact-input" rows="4" placeholder="Your Message"></textarea>
+
+<button class="contact-btn">Send Message</button>
+</div>
+</div>
+</section>
+
+<script>
+
+/* Typing Animation */
+const phrases = [
+"Hello, I'm Nisa",
+"I'm a Data Science Student",
+"I'm an Aspiring Data Scientist"
+];
+
+let phraseIndex = 0;
+let charIndex = 0;
+
+const typingElement = document.getElementById("typing-hero");
+
+function typeText(){
+    if(charIndex < phrases[phraseIndex].length){
+        typingElement.innerHTML += phrases[phraseIndex].charAt(charIndex);
+        charIndex++;
+        setTimeout(typeText,80);
+    }else{
+        setTimeout(eraseText,1500);
+    }
+}
+
+function eraseText(){
+    if(charIndex > 0){
+        typingElement.innerHTML = phrases[phraseIndex].substring(0,charIndex-1);
+        charIndex--;
+        setTimeout(eraseText,40);
+    }else{
+        phraseIndex = (phraseIndex+1)%phrases.length;
+        setTimeout(typeText,500);
+    }
+}
+
+typeText();
+
+/* Scroll Animation */
+const faders = document.querySelectorAll(".fade");
+
+const observer = new IntersectionObserver(entries=>{
+entries.forEach(entry=>{
+if(!entry.isIntersecting) return;
+entry.target.classList.add("show");
+});
+},{threshold:0.2});
+
+faders.forEach(fader=>{
+observer.observe(fader);
+});
+
+</script>
+
+</body>
+</html>
